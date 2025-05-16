@@ -1,0 +1,6 @@
+model_name_or_path: google/gemma-3-4b-it
+adapter_name_or_path: /playpen/mufan/distillagent/newllamafactory/LLaMA-Factory/saves/gemma/claude_alldata_COT_noselect_nomix/checkpoint-315
+template: gemma
+infer_backend: vllm  # choices: [huggingface, vllm]
+trust_remote_code: true
+finetuning_type: lora

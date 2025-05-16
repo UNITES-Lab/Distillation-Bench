@@ -1,0 +1,6 @@
+model_name_or_path: /playpen/mufan/distillagent/localmodel/output/DeepSeek-R1_424_r1_claude_alldata_COT_noselect_nomix/epoch5
+template: deepseek3
+infer_backend: vllm
+vllm_enforce_eager: true
+trust_remote_code: true
+# CUDA_VISIBLE_DEVICES=4 API_PORT=8000 llamafactory-cli api /playpen/mufan/distillagent/LLaMA-Factory/examples/inference/llama3_vllm8000.yaml
