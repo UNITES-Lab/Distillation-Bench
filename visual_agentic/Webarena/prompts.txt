@@ -1,0 +1,46 @@
+./planning_specifications/branch.txt:
+branch [parent_plan_id] [new_subplan_intent]: To create a new subplan based on PREVIOUS PLANS. Ensure the new subplan is connected to the appropriate parent plan by using its ID. E.g., `branch [12] [Navigate to the "Issue" page to check all the issues.]`./planning_specifications/prune.txt:
+prune [resume_plan_id] [reason]: To return to a previous plan state when the current plan is deemed impractical. Enter the ID of the plan state you want to resume. E.g., `prune [5] [The current page lacks items "black speaker," prompting a return to the initial page to restart the item search.]`./navigation_specifications/go_back.txt:
+go_back: To return to the previously viewed page../navigation_specifications/stop.txt:
+stop [answer]: To stop interaction and return response. Present your answer within the brackets. If the task doesn't require a textual answer or appears insurmountable, indicate "N/A" and additional reasons and all relevant information you gather as the answer. E.g., `stop [5h 47min]`./navigation_specifications/note.txt:
+note [content]: To take note of all important info w.r.t. completing the task to enable reviewing it later. E.g., `note [Spent $10 on 4/1/2024]`./navigation_specifications/go_home.txt:
+go_home: To return to the homepage where you can find other websites../navigation_specifications/click.txt:
+click [id]: To click on an element with its numerical ID on the webpage. E.g., `click [7]` If clicking on a specific element doesn't trigger the transition to your desired web state, this is due to the element's lack of interactivity or GUI visibility. In such cases, move on to interact with OTHER similar or relevant elements INSTEAD../navigation_specifications/scroll.txt:
+scroll [down/up] [reason]: To navigate the webpage content. E.g., `scroll [up] [Previous observations contain a link that might be useful.]`./navigation_specifications/type.txt:
+type [id] [content] [press_enter_after=0|1]: To type content into a field with a specific ID. By default, the "Enter" key is pressed after typing unless `press_enter_after` is set to 0. E.g., `type [15] [Carnegie Mellon University] [1]` If you can't find what you're looking for on your first attempt, consider refining your search keywords by breaking them down or trying related terms../output_specifications/action.txt:
+Select your action here../output_specifications/mistakes.txt:
+Point out the major mistakes of previous steps by ONLY using the following templates:
+    - You have make a reasoning mistake by "{quote}". The correct reasoning should be "{correction}".
+    - You should check the "{link_name}" link first.
+    - You should know that the recent order table doesn't include all previous orders. Don't hush to a conclusion.
+    - You have missed important details on this page: {details}.
+    - I don't think your answer follow the task requirements. That's a fault I wouldn't expect. Reconsider seriously.
+    - You have employed different approaches/the same approach many times to do the task but failed. The task assigner might just want to challenge you to answer no and there might be no answer for this brain teaser question.
+    - If the task ask for the most extreme case (e.g., with highest price), I suggest you sort them by that key first.
+    - If there are multiple requirements for an item, break down the requirements and search them one by one.
+    - The active plan is a complex task. Don't rush. Further break down the task by using the planning commands.
+    - There might be multiple relevant orders to check before reach the conclusion. First, view ALL previous orders to finalize the order checklist and take notes of orders to be checked with `note [note_content]` command while viewing. Second, view the order details one by one and take notes of all crucial information. Finally, view all notes and think step by step before concluding the answer.
+    - You have reasoned too much in one step which leads to errors. Break down the task with planning.
+    - You should change the "selected" state of the items in the combobox.
+    - From my observation and consideration, I suggest you conclude the task as there's no answer even though you have tried multiple times with different approaches.
+    - When the task mentioned "category", it imples you can navigate to that category by selecting menus step by step. Select the most relevant first and the subcategories would appear. Select the appropriate subcategory then.
+    - You have not gone over all the reviews, {review_page_num} pages in total.
+    - You have not gone over all the items, {item_page_num} pages in total.
+    - Don't take the same notes multiple times.
+    - You should select and click the radio (required field) first.
+    - You should go over all relevant items and take notes of all crucial information with `note [note_content]`. Then finalize your choice by carefully consider based on your notes.
+    - Don't submit yet. Just show the form completion page. Retry.
+    - You missed a required field before submission, which leads to the failure of your last attempt. Retry.
+    - Canceled Orders and pending orders are not fulfilled orders.
+    - There are {order_num} relevant orders on this page, which is/are {order_ids}. You have viewed {order_ids} and taken notes, and {order_ids} still requires reviewing and taking notes.
+    - You have gone over all review/item/order pages.
+    - Except when keywords "category", "subcategories", etc are specifically mentioned in the objective, the fastest way to find items is to use the `search` feature.
+./output_specifications/observation_highlight.txt:
+List the numerical ids of elements on the current webpage based on which you would issue your action. Also include elements on the current webpage you would attend to if you fail in the future and have to restore to this step. Don't include elements from the previous pages. Select elements at a higher hierarchical level if most their children nodes are considered crucial. Sort by relevance and potential values from high to low, and separate the ids with commas. E.g., `1321, 52, 756, 838`../output_specifications/observation_description.txt:
+Describe information in the CURRENT OBSERVATION section. Emphasize elements and features that are relevant or potentially helpful for fulfilling the objective in detail../output_specifications/reason.txt:
+Provide your rationale for proposing the subsequent action commands here../output_specifications/interaction_history_summary.txt:
+Emphasize all important details in the INTERACTION HISTORY section../output_specifications/action_candidates.txt:
+Propose ALL potential actions at this step. Itemize the actions using this format: `- reason: [{reason_for_proposing_the_following_action0}]\n- action: [{action0_command}]\n\n- reason: [{reason_for_proposing_the_following_action1}]\n- action: [{action1_command}]\n\n...`../output_specifications/action_assessment.txt:
+Assess the value and risk of each action. Consider both the best-case and worst-case outcomes resulting from its implementation. Itemize the assessment using this format: `- action [action_id]: [action value, including but not limited to what outcomes you can expect by executing the action, or whether the note is of the most correct and comprehensive content] [action risk, including but not limited to whether the note/stop content is correct, and whether you can gather more information by continuing playing rather than ending the trial] [{best_case}] [{worst_case}]`../output_specifications/plan_progress_assessment.txt:
+Review critically why the plans have not been fulfilled or the objective achieved. Justify your assessment with detailed evidence drawn from the objective, observations, and actions taken. Itemize the assessment using this format: `- plan [{plan_id}]\n\t[{step_ids_taken_for_this_milestone}] [{concrete_proof_from_observation}] [{why_milestone_a_not_successful}]\n\t[{step_ids_taken_for_this_milestone}] [{concrete_proof_from_observation}] [{why_milestone_b_not_successful}]\n\t...`../output_specifications/action_selection.txt:
+List the numerical id of your selected action here. You can only choose one action. E.g., `1`.

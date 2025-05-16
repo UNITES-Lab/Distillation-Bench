@@ -1,0 +1,552 @@
+--------------------------------ACTOR--------------------------------
+OBJECTIVE:
+List the top 2 search terms in my store
+
+STEP:
+0
+
+URL:
+http://127.0.0.1:7780/admin/admin/dashboard/
+
+INSTRUCTION:
+You are an AI assistant performing tasks on a web browser. You will be provided with task objective, current step, web page observations, previous plans, and interaction history. You need to issue an action for this step.
+
+Generate the response in the following format:
+ACTION:
+Select your action here.
+
+You are ONLY allowed to use the following action commands. Strictly adheres to the given format. Only issue one single action.
+If you think you should refine the plan, use the following actions:
+- branch [parent_plan_id] [new_subplan_intent]: To create a new subplan based on PREVIOUS PLANS. Ensure the new subplan is connected to the appropriate parent plan by using its ID. E.g., `branch [12] [Navigate to the "Issue" page to check all the issues.]`
+- prune [resume_plan_id] [reason]: To return to a previous plan state when the current plan is deemed impractical. Enter the ID of the plan state you want to resume. E.g., `prune [5] [The current page lacks items "black speaker," prompting a return to the initial page to restart the item search.]`
+Otherwise, use the following actions:
+- click [id]: To click on an element with its numerical ID on the webpage. E.g., `click [7]` If clicking on a specific element doesn't trigger the transition to your desired web state, this is due to the element's lack of interactivity or GUI visibility. In such cases, move on to interact with OTHER similar or relevant elements INSTEAD.
+- type [id] [content] [press_enter_after=0|1]: To type content into a field with a specific ID. By default, the "Enter" key is pressed after typing unless `press_enter_after` is set to 0. E.g., `type [15] [Carnegie Mellon University] [1]` If you can't find what you're looking for on your first attempt, consider refining your search keywords by breaking them down or trying related terms.
+- stop [answer]: To stop interaction and return response. Present your answer within the brackets. If the task doesn't require a textual answer or appears insurmountable or finally find no answer(for example if there is no product processing or no place nearby, you can't choose a not correct answer), must indicate "N/A"! must indicate "N/A"! and additional reasons and all relevant information you gather as the answer. E.g., `stop [N/A ...]`. If return the direct response textual answer within brackets, The response should be the exact value/token without any additional description or explanation, E.g., For a token request, use stop [ABC_123] not stop [The token is ABC_123]. You don't need to do more exploration after finisded the task, just finished the task.
+- note [content]: To take note of all important info w.r.t. completing the task to enable reviewing it later. E.g., `note [Spent $10 on 4/1/2024]`
+- go_back: To return to the previously viewed page.
+Please note in these web browsing tasks, we would use reddit to refer to the website postmill since we are simulating a web browsing task on a reddit-like website. We give you the right website, please just explore. This task must 100% can be completed without requesting external information or human assistance. Required information should be obtained through your own actions. Keep exploring different approaches until you succeed - never give up or wait for human input. plese, you generate the reply and action candidates and all the things must folllow the format upper!!! And give me the answer in format.
+
+ONLINE INPUT:
+OBJECTIVE:
+List the top 2 search terms in my store
+CURRENT OBSERVATION:
+RootWebArea 'Dashboard / Magento Admin'
+	link [178] 'Magento Admin Panel'
+	menubar [85]
+		link [87] 'DASHBOARD'
+		link [90] 'SALES'
+		link [96] 'CATALOG'
+		link [102] 'CUSTOMERS'
+		link [108] 'MARKETING'
+		link [114] 'CONTENT'
+		link [120] 'REPORTS'
+		link [138] 'STORES'
+		link [144] 'SYSTEM'
+		link [150] 'FIND PARTNERS & EXTENSIONS'
+	heading 'Dashboard'
+	link [254] 'admin'
+	link [256]
+	textbox [894] [required: False]
+	main
+		text 'Scope:'
+		button [262] 'All Store Views'
+		link [265] 'What is this?'
+		button [240] 'Reload Data'
+		HeaderAsNonLandmark [898] 'Advanced Reporting'
+		text "Gain new insights and take command of your business' performance, using our dynamic product, order, and customer reports tailored to your customer data."
+		link [902] 'Go to Advanced Reporting'
+		text 'Chart is disabled. To enable the chart, click'
+		link [906] 'here'
+		text 'Revenue'
+		text 'Tax'
+		text 'Shipping'
+		text 'Quantity'
+		tablist [57]
+			tab [59] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Bestsellers' [selected: True]
+				link [67] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Bestsellers'
+					generic [952] 'The information in this tab has been changed.'
+					generic [953] 'This tab contains invalid data. Please resolve this before saving.'
+					generic [954] 'Loading...'
+			tab [61] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Most Viewed Products' [selected: False]
+				link [69] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Most Viewed Products'
+					generic [1049] 'The information in this tab has been changed.'
+					generic [1050] 'This tab contains invalid data. Please resolve this before saving.'
+					generic [1051] 'Loading...'
+			tab [63] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... New Customers' [selected: False]
+				link [71] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... New Customers'
+					generic [1055] 'The information in this tab has been changed.'
+					generic [1056] 'This tab contains invalid data. Please resolve this before saving.'
+					generic [1057] 'Loading...'
+			tab [65] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Customers' [selected: False]
+				link [73] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Customers'
+					generic [1061] 'The information in this tab has been changed.'
+					generic [1062] 'This tab contains invalid data. Please resolve this before saving.'
+					generic [1063] 'Loading...'
+		tabpanel 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Bestsellers'
+			table
+				row '| Product | Price | Quantity |'
+				row '| --- | --- | --- |'
+				row '| Sprite Yoga Strap 6 foot | 14.00 | 6 |'
+				row '| Quest Lumaflex Band | 19.00 | 6 |'
+				row '| Sprite Stasis Ball 65 cm | 27.00 | 6 |'
+				row '| Overnight Duffle | 45.00 | 5 |'
+				row '| Sprite Stasis Ball 55 cm | 23.00 | 5 |'
+		text 'Lifetime Sales'
+		text 'Average Order'
+		text 'Last Orders'
+		table
+			row '| Customer | Items | Total |'
+			row '| --- | --- | --- |'
+			row '| Sarah Miller | 5 | 194.40 |'
+			row '| Grace Nguyen | 4 | 190.00 |'
+			row '| Matt Baker | 3 | 151.40 |'
+			row '| Lily Potter | 4 | 188.20 |'
+			row '| Ava Brown | 2 | 83.40 |'
+		text 'Last Search Terms'
+		table
+			row '| Search Term | Results | Uses |'
+			row '| --- | --- | --- |'
+			row '| tanks | 23 | 1 |'
+			row '| nike | 0 | 3 |'
+			row '| Joust Bag | 10 | 4 |'
+			row '| hollister | 1 | 19 |'
+			row '| Antonia Racer Tank | 23 | 2 |'
+		text 'Top Search Terms'
+		table
+			row '| Search Term | Results | Uses |'
+			row '| --- | --- | --- |'
+			row '| hollister | 1 | 19 |'
+			row '| Joust Bag | 10 | 4 |'
+			row '| Antonia Racer Tank | 23 | 2 |'
+			row '| tanks | 23 | 1 |'
+			row '| WP10 | 1 | 1 |'
+	contentinfo
+		link [244]
+		text 'Copyright 2024 Magento Commerce Inc. All rights reserved.'
+		text 'ver. 2.4.6'
+		link [247] 'Privacy Policy'
+		link [249] 'Account Activity'
+		link [251] 'Report an Issue'
+
+
+RESPONSE:
+ACTION: stop[wrong answer]
+
+RAG LOG:
+None
+
+--------------------------------ACTOR--------------------------------
+OBJECTIVE:
+List the top 2 search terms in my store
+
+STEP:
+0
+
+URL:
+http://127.0.0.1:7780/admin/admin/dashboard/
+
+INSTRUCTION:
+You are an AI assistant performing tasks on a web browser. You will be provided with task objective, current step, web page observations, previous plans, and interaction history. You need to issue an action for this step.
+
+Generate the response in the following format:
+ACTION:
+Select your action here.
+
+You are ONLY allowed to use the following action commands. Strictly adheres to the given format. Only issue one single action.
+If you think you should refine the plan, use the following actions:
+- branch [parent_plan_id] [new_subplan_intent]: To create a new subplan based on PREVIOUS PLANS. Ensure the new subplan is connected to the appropriate parent plan by using its ID. E.g., `branch [12] [Navigate to the "Issue" page to check all the issues.]`
+- prune [resume_plan_id] [reason]: To return to a previous plan state when the current plan is deemed impractical. Enter the ID of the plan state you want to resume. E.g., `prune [5] [The current page lacks items "black speaker," prompting a return to the initial page to restart the item search.]`
+Otherwise, use the following actions:
+- click [id]: To click on an element with its numerical ID on the webpage. E.g., `click [7]` If clicking on a specific element doesn't trigger the transition to your desired web state, this is due to the element's lack of interactivity or GUI visibility. In such cases, move on to interact with OTHER similar or relevant elements INSTEAD.
+- type [id] [content] [press_enter_after=0|1]: To type content into a field with a specific ID. By default, the "Enter" key is pressed after typing unless `press_enter_after` is set to 0. E.g., `type [15] [Carnegie Mellon University] [1]` If you can't find what you're looking for on your first attempt, consider refining your search keywords by breaking them down or trying related terms.
+- stop [answer]: To stop interaction and return response. Present your answer within the brackets. If the task doesn't require a textual answer or appears insurmountable or finally find no answer(for example if there is no product processing or no place nearby, you can't choose a not correct answer), must indicate "N/A"! must indicate "N/A"! and additional reasons and all relevant information you gather as the answer. E.g., `stop [N/A ...]`. If return the direct response textual answer within brackets, The response should be the exact value/token without any additional description or explanation, E.g., For a token request, use stop [ABC_123] not stop [The token is ABC_123]. You don't need to do more exploration after finisded the task, just finished the task.
+- note [content]: To take note of all important info w.r.t. completing the task to enable reviewing it later. E.g., `note [Spent $10 on 4/1/2024]`
+- go_back: To return to the previously viewed page.
+Please note in these web browsing tasks, we would use reddit to refer to the website postmill since we are simulating a web browsing task on a reddit-like website. We give you the right website, please just explore. This task must 100% can be completed without requesting external information or human assistance. Required information should be obtained through your own actions. Keep exploring different approaches until you succeed - never give up or wait for human input. plese, you generate the reply and action candidates and all the things must folllow the format upper!!! And give me the answer in format.
+
+ONLINE INPUT:
+OBJECTIVE:
+List the top 2 search terms in my store
+CURRENT OBSERVATION:
+RootWebArea 'Dashboard / Magento Admin'
+	link [178] 'Magento Admin Panel'
+	menubar [85]
+		link [87] 'DASHBOARD'
+		link [90] 'SALES'
+		link [96] 'CATALOG'
+		link [102] 'CUSTOMERS'
+		link [108] 'MARKETING'
+		link [114] 'CONTENT'
+		link [120] 'REPORTS'
+		link [138] 'STORES'
+		link [144] 'SYSTEM'
+		link [150] 'FIND PARTNERS & EXTENSIONS'
+	heading 'Dashboard'
+	link [254] 'admin'
+	link [256]
+	textbox [894] [required: False]
+	main
+		text 'Scope:'
+		button [262] 'All Store Views'
+		link [265] 'What is this?'
+		button [240] 'Reload Data'
+		HeaderAsNonLandmark [898] 'Advanced Reporting'
+		text "Gain new insights and take command of your business' performance, using our dynamic product, order, and customer reports tailored to your customer data."
+		link [902] 'Go to Advanced Reporting'
+		text 'Chart is disabled. To enable the chart, click'
+		link [906] 'here'
+		text 'Revenue'
+		text 'Tax'
+		text 'Shipping'
+		text 'Quantity'
+		tablist [57]
+			tab [59] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Bestsellers' [selected: True]
+				link [67] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Bestsellers'
+					generic [952] 'The information in this tab has been changed.'
+					generic [953] 'This tab contains invalid data. Please resolve this before saving.'
+					generic [954] 'Loading...'
+			tab [61] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Most Viewed Products' [selected: False]
+				link [69] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Most Viewed Products'
+					generic [1049] 'The information in this tab has been changed.'
+					generic [1050] 'This tab contains invalid data. Please resolve this before saving.'
+					generic [1051] 'Loading...'
+			tab [63] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... New Customers' [selected: False]
+				link [71] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... New Customers'
+					generic [1055] 'The information in this tab has been changed.'
+					generic [1056] 'This tab contains invalid data. Please resolve this before saving.'
+					generic [1057] 'Loading...'
+			tab [65] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Customers' [selected: False]
+				link [73] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Customers'
+					generic [1061] 'The information in this tab has been changed.'
+					generic [1062] 'This tab contains invalid data. Please resolve this before saving.'
+					generic [1063] 'Loading...'
+		tabpanel 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Bestsellers'
+			table
+				row '| Product | Price | Quantity |'
+				row '| --- | --- | --- |'
+				row '| Sprite Stasis Ball 65 cm | 27.00 | 6 |'
+				row '| Sprite Yoga Strap 6 foot | 14.00 | 6 |'
+				row '| Quest Lumaflex Band | 19.00 | 6 |'
+				row '| Overnight Duffle | 45.00 | 5 |'
+				row '| Sprite Stasis Ball 55 cm | 23.00 | 5 |'
+		text 'Lifetime Sales'
+		text 'Average Order'
+		text 'Last Orders'
+		table
+			row '| Customer | Items | Total |'
+			row '| --- | --- | --- |'
+			row '| Sarah Miller | 5 | 194.40 |'
+			row '| Grace Nguyen | 4 | 190.00 |'
+			row '| Matt Baker | 3 | 151.40 |'
+			row '| Lily Potter | 4 | 188.20 |'
+			row '| Ava Brown | 2 | 83.40 |'
+		text 'Last Search Terms'
+		table
+			row '| Search Term | Results | Uses |'
+			row '| --- | --- | --- |'
+			row '| tanks | 23 | 1 |'
+			row '| nike | 0 | 3 |'
+			row '| Joust Bag | 10 | 4 |'
+			row '| hollister | 1 | 19 |'
+			row '| Antonia Racer Tank | 23 | 2 |'
+		text 'Top Search Terms'
+		table
+			row '| Search Term | Results | Uses |'
+			row '| --- | --- | --- |'
+			row '| hollister | 1 | 19 |'
+			row '| Joust Bag | 10 | 4 |'
+			row '| Antonia Racer Tank | 23 | 2 |'
+			row '| tanks | 23 | 1 |'
+			row '| WP10 | 1 | 1 |'
+	contentinfo
+		link [244]
+		text 'Copyright 2024 Magento Commerce Inc. All rights reserved.'
+		text 'ver. 2.4.6'
+		link [247] 'Privacy Policy'
+		link [249] 'Account Activity'
+		link [251] 'Report an Issue'
+
+
+RESPONSE:
+ACTION: stop[wrong answer]
+
+RAG LOG:
+None
+
+--------------------------------ACTOR--------------------------------
+OBJECTIVE:
+List the top 2 search terms in my store
+
+STEP:
+0
+
+URL:
+http://127.0.0.1:7780/admin/admin/dashboard/
+
+INSTRUCTION:
+You are an AI assistant performing tasks on a web browser. You will be provided with task objective, current step, web page observations, previous plans, and interaction history. You need to issue an action for this step.
+
+Generate the response in the following format:
+ACTION:
+Select your action here.
+
+You are ONLY allowed to use the following action commands. Strictly adheres to the given format. Only issue one single action.
+If you think you should refine the plan, use the following actions:
+- branch [parent_plan_id] [new_subplan_intent]: To create a new subplan based on PREVIOUS PLANS. Ensure the new subplan is connected to the appropriate parent plan by using its ID. E.g., `branch [12] [Navigate to the "Issue" page to check all the issues.]`
+- prune [resume_plan_id] [reason]: To return to a previous plan state when the current plan is deemed impractical. Enter the ID of the plan state you want to resume. E.g., `prune [5] [The current page lacks items "black speaker," prompting a return to the initial page to restart the item search.]`
+Otherwise, use the following actions:
+- click [id]: To click on an element with its numerical ID on the webpage. E.g., `click [7]` If clicking on a specific element doesn't trigger the transition to your desired web state, this is due to the element's lack of interactivity or GUI visibility. In such cases, move on to interact with OTHER similar or relevant elements INSTEAD.
+- type [id] [content] [press_enter_after=0|1]: To type content into a field with a specific ID. By default, the "Enter" key is pressed after typing unless `press_enter_after` is set to 0. E.g., `type [15] [Carnegie Mellon University] [1]` If you can't find what you're looking for on your first attempt, consider refining your search keywords by breaking them down or trying related terms.
+- stop [answer]: To stop interaction and return response. Present your answer within the brackets. If the task doesn't require a textual answer or appears insurmountable or finally find no answer(for example if there is no product processing or no place nearby, you can't choose a not correct answer), must indicate "N/A"! must indicate "N/A"! and additional reasons and all relevant information you gather as the answer. E.g., `stop [N/A ...]`. If return the direct response textual answer within brackets, The response should be the exact value/token without any additional description or explanation, E.g., For a token request, use stop [ABC_123] not stop [The token is ABC_123]. You don't need to do more exploration after finisded the task, just finished the task.
+- note [content]: To take note of all important info w.r.t. completing the task to enable reviewing it later. E.g., `note [Spent $10 on 4/1/2024]`
+- go_back: To return to the previously viewed page.
+Please note in these web browsing tasks, we would use reddit to refer to the website postmill since we are simulating a web browsing task on a reddit-like website. We give you the right website, please just explore. This task must 100% can be completed without requesting external information or human assistance. Required information should be obtained through your own actions. Keep exploring different approaches until you succeed - never give up or wait for human input. plese, you generate the reply and action candidates and all the things must folllow the format upper!!! And give me the answer in format.
+
+ONLINE INPUT:
+OBJECTIVE:
+List the top 2 search terms in my store
+CURRENT OBSERVATION:
+RootWebArea 'Dashboard / Magento Admin'
+	link [178] 'Magento Admin Panel'
+	menubar [85]
+		link [87] 'DASHBOARD'
+		link [90] 'SALES'
+		link [96] 'CATALOG'
+		link [102] 'CUSTOMERS'
+		link [108] 'MARKETING'
+		link [114] 'CONTENT'
+		link [120] 'REPORTS'
+		link [138] 'STORES'
+		link [144] 'SYSTEM'
+		link [150] 'FIND PARTNERS & EXTENSIONS'
+	heading 'Dashboard'
+	link [254] 'admin'
+	link [256]
+	textbox [894] [required: False]
+	main
+		text 'Scope:'
+		button [262] 'All Store Views'
+		link [265] 'What is this?'
+		button [240] 'Reload Data'
+		HeaderAsNonLandmark [898] 'Advanced Reporting'
+		text "Gain new insights and take command of your business' performance, using our dynamic product, order, and customer reports tailored to your customer data."
+		link [902] 'Go to Advanced Reporting'
+		text 'Chart is disabled. To enable the chart, click'
+		link [906] 'here'
+		text 'Revenue'
+		text 'Tax'
+		text 'Shipping'
+		text 'Quantity'
+		tablist [57]
+			tab [59] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Bestsellers' [selected: True]
+				link [67] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Bestsellers'
+					generic [952] 'The information in this tab has been changed.'
+					generic [953] 'This tab contains invalid data. Please resolve this before saving.'
+					generic [954] 'Loading...'
+			tab [61] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Most Viewed Products' [selected: False]
+				link [69] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Most Viewed Products'
+					generic [1049] 'The information in this tab has been changed.'
+					generic [1050] 'This tab contains invalid data. Please resolve this before saving.'
+					generic [1051] 'Loading...'
+			tab [63] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... New Customers' [selected: False]
+				link [71] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... New Customers'
+					generic [1055] 'The information in this tab has been changed.'
+					generic [1056] 'This tab contains invalid data. Please resolve this before saving.'
+					generic [1057] 'Loading...'
+			tab [65] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Customers' [selected: False]
+				link [73] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Customers'
+					generic [1061] 'The information in this tab has been changed.'
+					generic [1062] 'This tab contains invalid data. Please resolve this before saving.'
+					generic [1063] 'Loading...'
+		tabpanel 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Bestsellers'
+			table
+				row '| Product | Price | Quantity |'
+				row '| --- | --- | --- |'
+				row '| Sprite Stasis Ball 65 cm | 27.00 | 6 |'
+				row '| Sprite Yoga Strap 6 foot | 14.00 | 6 |'
+				row '| Quest Lumaflex Band | 19.00 | 6 |'
+				row '| Overnight Duffle | 45.00 | 5 |'
+				row '| Sprite Stasis Ball 55 cm | 23.00 | 5 |'
+		text 'Lifetime Sales'
+		text 'Average Order'
+		text 'Last Orders'
+		table
+			row '| Customer | Items | Total |'
+			row '| --- | --- | --- |'
+			row '| Sarah Miller | 5 | 194.40 |'
+			row '| Grace Nguyen | 4 | 190.00 |'
+			row '| Matt Baker | 3 | 151.40 |'
+			row '| Lily Potter | 4 | 188.20 |'
+			row '| Ava Brown | 2 | 83.40 |'
+		text 'Last Search Terms'
+		table
+			row '| Search Term | Results | Uses |'
+			row '| --- | --- | --- |'
+			row '| tanks | 23 | 1 |'
+			row '| nike | 0 | 3 |'
+			row '| Joust Bag | 10 | 4 |'
+			row '| hollister | 1 | 19 |'
+			row '| Antonia Racer Tank | 23 | 2 |'
+		text 'Top Search Terms'
+		table
+			row '| Search Term | Results | Uses |'
+			row '| --- | --- | --- |'
+			row '| hollister | 1 | 19 |'
+			row '| Joust Bag | 10 | 4 |'
+			row '| Antonia Racer Tank | 23 | 2 |'
+			row '| tanks | 23 | 1 |'
+			row '| WP10 | 1 | 1 |'
+	contentinfo
+		link [244]
+		text 'Copyright 2024 Magento Commerce Inc. All rights reserved.'
+		text 'ver. 2.4.6'
+		link [247] 'Privacy Policy'
+		link [249] 'Account Activity'
+		link [251] 'Report an Issue'
+
+
+RESPONSE:
+ACTION: stop[wrong answer]
+
+RAG LOG:
+None
+
+--------------------------------ACTOR--------------------------------
+OBJECTIVE:
+List the top 2 search terms in my store
+
+STEP:
+0
+
+URL:
+http://127.0.0.1:7780/admin/admin/dashboard/
+
+INSTRUCTION:
+You are an AI assistant performing tasks on a web browser. You will be provided with task objective, current step, web page observations, previous plans, and interaction history. You need to issue an action for this step.
+
+Generate the response in the following format:
+ACTION:
+Select your action here.
+
+You are ONLY allowed to use the following action commands. Strictly adheres to the given format. Only issue one single action.
+If you think you should refine the plan, use the following actions:
+- branch [parent_plan_id] [new_subplan_intent]: To create a new subplan based on PREVIOUS PLANS. Ensure the new subplan is connected to the appropriate parent plan by using its ID. E.g., `branch [12] [Navigate to the "Issue" page to check all the issues.]`
+- prune [resume_plan_id] [reason]: To return to a previous plan state when the current plan is deemed impractical. Enter the ID of the plan state you want to resume. E.g., `prune [5] [The current page lacks items "black speaker," prompting a return to the initial page to restart the item search.]`
+Otherwise, use the following actions:
+- click [id]: To click on an element with its numerical ID on the webpage. E.g., `click [7]` If clicking on a specific element doesn't trigger the transition to your desired web state, this is due to the element's lack of interactivity or GUI visibility. In such cases, move on to interact with OTHER similar or relevant elements INSTEAD.
+- type [id] [content] [press_enter_after=0|1]: To type content into a field with a specific ID. By default, the "Enter" key is pressed after typing unless `press_enter_after` is set to 0. E.g., `type [15] [Carnegie Mellon University] [1]` If you can't find what you're looking for on your first attempt, consider refining your search keywords by breaking them down or trying related terms.
+- stop [answer]: To stop interaction and return response. Present your answer within the brackets. If the task doesn't require a textual answer or appears insurmountable or finally find no answer(for example if there is no product processing or no place nearby, you can't choose a not correct answer), must indicate "N/A"! must indicate "N/A"! and additional reasons and all relevant information you gather as the answer. E.g., `stop [N/A ...]`. If return the direct response textual answer within brackets, The response should be the exact value/token without any additional description or explanation, E.g., For a token request, use stop [ABC_123] not stop [The token is ABC_123]. You don't need to do more exploration after finisded the task, just finished the task.
+- note [content]: To take note of all important info w.r.t. completing the task to enable reviewing it later. E.g., `note [Spent $10 on 4/1/2024]`
+- go_back: To return to the previously viewed page.
+Please note in these web browsing tasks, we would use reddit to refer to the website postmill since we are simulating a web browsing task on a reddit-like website. We give you the right website, please just explore. This task must 100% can be completed without requesting external information or human assistance. Required information should be obtained through your own actions. Keep exploring different approaches until you succeed - never give up or wait for human input. plese, you generate the reply and action candidates and all the things must folllow the format upper!!! And give me the answer in format.
+
+ONLINE INPUT:
+OBJECTIVE:
+List the top 2 search terms in my store
+CURRENT OBSERVATION:
+RootWebArea 'Dashboard / Magento Admin'
+	link [178] 'Magento Admin Panel'
+	menubar [85]
+		link [87] 'DASHBOARD'
+		link [90] 'SALES'
+		link [96] 'CATALOG'
+		link [102] 'CUSTOMERS'
+		link [108] 'MARKETING'
+		link [114] 'CONTENT'
+		link [120] 'REPORTS'
+		link [138] 'STORES'
+		link [144] 'SYSTEM'
+		link [150] 'FIND PARTNERS & EXTENSIONS'
+	heading 'Dashboard'
+	link [254] 'admin'
+	link [256]
+	textbox [894] [required: False]
+	main
+		text 'Scope:'
+		button [262] 'All Store Views'
+		link [265] 'What is this?'
+		button [240] 'Reload Data'
+		HeaderAsNonLandmark [898] 'Advanced Reporting'
+		text "Gain new insights and take command of your business' performance, using our dynamic product, order, and customer reports tailored to your customer data."
+		link [902] 'Go to Advanced Reporting'
+		text 'Chart is disabled. To enable the chart, click'
+		link [906] 'here'
+		text 'Revenue'
+		text 'Tax'
+		text 'Shipping'
+		text 'Quantity'
+		tablist [57]
+			tab [59] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Bestsellers' [selected: True]
+				link [67] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Bestsellers'
+					generic [952] 'The information in this tab has been changed.'
+					generic [953] 'This tab contains invalid data. Please resolve this before saving.'
+					generic [954] 'Loading...'
+			tab [61] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Most Viewed Products' [selected: False]
+				link [69] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Most Viewed Products'
+					generic [1049] 'The information in this tab has been changed.'
+					generic [1050] 'This tab contains invalid data. Please resolve this before saving.'
+					generic [1051] 'Loading...'
+			tab [63] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... New Customers' [selected: False]
+				link [71] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... New Customers'
+					generic [1055] 'The information in this tab has been changed.'
+					generic [1056] 'This tab contains invalid data. Please resolve this before saving.'
+					generic [1057] 'Loading...'
+			tab [65] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Customers' [selected: False]
+				link [73] 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Customers'
+					generic [1061] 'The information in this tab has been changed.'
+					generic [1062] 'This tab contains invalid data. Please resolve this before saving.'
+					generic [1063] 'Loading...'
+		tabpanel 'The information in this tab has been changed. This tab contains invalid data. Please resolve this before saving. Loading... Bestsellers'
+			table
+				row '| Product | Price | Quantity |'
+				row '| --- | --- | --- |'
+				row '| Quest Lumaflex Band | 19.00 | 6 |'
+				row '| Sprite Yoga Strap 6 foot | 14.00 | 6 |'
+				row '| Sprite Stasis Ball 65 cm | 27.00 | 6 |'
+				row '| Sprite Stasis Ball 55 cm | 23.00 | 5 |'
+				row '| Overnight Duffle | 45.00 | 5 |'
+		text 'Lifetime Sales'
+		text 'Average Order'
+		text 'Last Orders'
+		table
+			row '| Customer | Items | Total |'
+			row '| --- | --- | --- |'
+			row '| Sarah Miller | 5 | 194.40 |'
+			row '| Grace Nguyen | 4 | 190.00 |'
+			row '| Matt Baker | 3 | 151.40 |'
+			row '| Lily Potter | 4 | 188.20 |'
+			row '| Ava Brown | 2 | 83.40 |'
+		text 'Last Search Terms'
+		table
+			row '| Search Term | Results | Uses |'
+			row '| --- | --- | --- |'
+			row '| tanks | 23 | 1 |'
+			row '| nike | 0 | 3 |'
+			row '| Joust Bag | 10 | 4 |'
+			row '| hollister | 1 | 19 |'
+			row '| Antonia Racer Tank | 23 | 2 |'
+		text 'Top Search Terms'
+		table
+			row '| Search Term | Results | Uses |'
+			row '| --- | --- | --- |'
+			row '| hollister | 1 | 19 |'
+			row '| Joust Bag | 10 | 4 |'
+			row '| Antonia Racer Tank | 23 | 2 |'
+			row '| tanks | 23 | 1 |'
+			row '| WP10 | 1 | 1 |'
+	contentinfo
+		link [244]
+		text 'Copyright 2024 Magento Commerce Inc. All rights reserved.'
+		text 'ver. 2.4.6'
+		link [247] 'Privacy Policy'
+		link [249] 'Account Activity'
+		link [251] 'Report an Issue'
+
+
+RESPONSE:
+ACTION: stop[wrong answer]
+
+RAG LOG:
+None
+

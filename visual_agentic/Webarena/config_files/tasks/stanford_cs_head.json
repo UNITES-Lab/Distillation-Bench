@@ -1,0 +1,20 @@
+{
+  "sites": [
+    "google"
+  ],
+  "task_id": "stanford_cs_head",
+  "require_login": false,
+  "storage_state": null,
+  "start_url": "https://www.google.com/",
+  "geolocation": null,
+  "intent": "What is the email address of the Dean of the School of Engineering at Stanford University?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "exact_match": "widom@stanford.edu"
+    }
+  }
+}

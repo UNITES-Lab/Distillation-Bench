@@ -1,0 +1,34 @@
+STEP:
+2
+
+OBJECTIVE:
+Create a discussion post about "long distance relationship" in a relevant subreddit and ask users for their opinions with the simple prompt, "your opinion"
+
+PREVIOUS PLANS:
+[0] (Active Plan) Find the solution to "Create a discussion post about "long distance relationship" in a relevant subreddit and ask users for their opinions with the simple prompt, "your opinion""
+
+OBSERVATION DESCRIPTION:
+We are on the "Create submission" page. The page contains various input fields for creating a post:
+- A radio button for selecting submission type (currently set to "URL")
+- A textbox for entering a URL (currently not required)
+- A required textbox for entering the post title
+- A textbox for entering the post body (not required, but we'll use it)
+- A checkbox for "Formatting help"
+- A combobox for selecting the forum (subreddit)
+- A "Create submission" button to submit the post
+
+The radio button for "URL" is currently checked, which we need to change to create a text-based discussion post.
+
+REASON:
+To create our discussion post about long-distance relationships, we need to:
+1. Change the submission type to text-based (not URL-based)
+2. Enter an appropriate title
+3. Enter the body text with our question
+4. Select an appropriate forum
+5. Submit the post
+
+For this step, we'll change the submission type to text-based, as we want to create a discussion post, not share a URL. The radio button for "URL" is currently checked (element ID 2008), so we need to click it to uncheck it and switch to text-based submission.
+
+ACTION:
+click [2008]
+

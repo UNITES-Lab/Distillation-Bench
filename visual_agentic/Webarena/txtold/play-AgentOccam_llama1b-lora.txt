@@ -1,0 +1,9 @@
+STEP:
+20
+
+OBJECTIVE:
+Create a new forum named Karaoke, with a description of Place for Karaoke lovers, and include ['devices', 'setup'] in the sidebar?
+
+ACTION:
+click [1315]
+

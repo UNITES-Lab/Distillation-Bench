@@ -1,0 +1,18 @@
+STEP:
+3
+
+OBJECTIVE:
+Today is 3/15/2023, generate a tax report for this year
+
+PREVIOUS PLANS:
+[0] (Active Plan) Find the solution to "Today is 3/15/2023, generate a tax report for this year"
+
+OBSERVATION DESCRIPTION:
+
+
+REASON:
+
+
+ACTION:
+stop[wrong answer]
+

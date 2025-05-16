@@ -1,0 +1,9 @@
+STEP:
+17
+
+OBJECTIVE:
+List the top 2 search terms in my store
+
+ACTION:
+stop[wrong answer]
+

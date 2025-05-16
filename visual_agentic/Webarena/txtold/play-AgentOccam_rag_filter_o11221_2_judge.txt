@@ -1,0 +1,18 @@
+STEP:
+20
+
+OBJECTIVE:
+Post my question, "places for new drivers to learn driving in pittsburgh", in a subreddit where I'm likely to get an answer
+
+PREVIOUS PLANS:
+[0] (Active Plan) Find the solution to "Post my question, "places for new drivers to learn driving in pittsburgh", in a subreddit where I'm likely to get an answer"
+
+REASON:
+
+
+ACTION:
+
+
+OBSERVATION DESCRIPTION:
+We're on the "Create submission" page for the Pittsburgh subreddit. The title field [17102] is filled with our question "places for new drivers to learn driving in pittsburgh". The URL radio button [17093] is checked. There's an empty body textbox [17112] for additional content. The forum selection combobox [17032] is available but not pre-filled. The "Create submission" button [17234] is present at the bottom of the form.
+

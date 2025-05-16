@@ -1,0 +1,18 @@
+STEP:
+3
+
+OBJECTIVE:
+Edit my post on Lord of the Rings by adding a line to the body that says "The cast is amazing!"
+
+PREVIOUS PLANS:
+[0] (Active Plan) Find the solution to "Edit my post on Lord of the Rings by adding a line to the body that says "The cast is amazing!""
+
+OBSERVATION DESCRIPTION:
+The current page displays the "Top Post of All Time" for the Lord of the Rings post. The post body contains the text "Every watch makes me feel like a kid again. The cast is amazing!". There's an "Edit" link [2924] available for the post. The alert message at the top of the page confirms that the submission was edited.
+
+REASON:
+The edit has been successfully completed, so we can stop and report our success.
+
+ACTION:
+stop [The post on Lord of the Rings has been edited to include the line "The cast is amazing!" in the body.]
+
